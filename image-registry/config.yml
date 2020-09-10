@@ -5,7 +5,7 @@ metadata:
 spec:
   httpSecret: 92fb3dcffc9095c61dc50a433f25120013de5c7fbdce265f1aa835f3982a915dfce4d20bf5c8d54c828f1f445eb4dbdc83d1128d1f3896fadc735d565514e888
   logging: 2
-  managementState: Removed
+  managementState: Managed
   proxy: {}
   replicas: 1
   requests:
@@ -14,4 +14,6 @@ spec:
     write:
       maxWaitInQueue: 0s
   rolloutStrategy: RollingUpdate
-  storage: {}
+  storage:
+    pvc:
+      claim:
