@@ -17,3 +17,4 @@ spec:
           - --git-poll-interval=1m
           - --listen-metrics=:3031
           - --manifest-generation=true
+          - --registry-disable-scanning=true
