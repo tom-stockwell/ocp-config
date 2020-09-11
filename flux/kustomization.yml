@@ -1,5 +1,5 @@
 bases:
-  - https://github.com/fluxcd/flux//deploy?ref=v1.20.2
+  - https://github.com/fluxcd/flux/deploy?ref=v1.20.2
 
 patchesStrategicMerge:
   - patches/flux.yml
