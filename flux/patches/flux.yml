@@ -18,3 +18,4 @@ spec:
           - --listen-metrics=:3031
           - --manifest-generation=true
           - --registry-disable-scanning=true
+          - --sync-garbage-collection=true
