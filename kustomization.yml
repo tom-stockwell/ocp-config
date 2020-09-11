@@ -1,4 +1,5 @@
 bases:
-  - flux
   - image-registry
+  - auth
+  - flux
   - sealed-secrets
