@@ -1,3 +1,4 @@
 bases:
   - flux
   - image-registry
+  - sealed-secrets
