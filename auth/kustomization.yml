@@ -1,3 +1,4 @@
 resources:
   - resources/config.yml
   - resources/htpasswd-secret.yml
+  - resources/cluster-admins.yml
