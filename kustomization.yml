@@ -1,5 +1,4 @@
 bases:
-  - image-registry
-  - auth
   - flux
   - sealed-secrets
+  - cluster-config
