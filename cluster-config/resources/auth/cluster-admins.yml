@@ -9,3 +9,5 @@ roleRef:
 subjects:
 - kind: User
   name: stocky
+- kind: User
+  name: kubeadmin
