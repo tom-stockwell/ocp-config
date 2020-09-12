@@ -1,0 +1,6 @@
+resources:
+  - resources/auth/config.yml
+  - resources/auth/htpasswd-secret.yml
+  - resources/auth/cluster-admins.yml
+  - resources/image-registry/config.yml
+  - resources/image-registry/persistent-volume.yml
