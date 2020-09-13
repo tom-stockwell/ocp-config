@@ -3,3 +3,4 @@ bases:
   - sealed-secrets
   - cluster-config
   - nfs-provisioner
+  - codeready-workspaces

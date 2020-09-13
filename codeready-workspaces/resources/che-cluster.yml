@@ -1,0 +1,16 @@
+apiVersion: org.eclipse.che/v1
+kind: CheCluster
+metadata:
+  name: codeready-workspaces
+  namespace: openshift-workspaces
+spec:
+  auth:
+    openShiftoAuth: true
+  database:
+    externalDb: false
+  server:
+    selfSignedCert: true
+    tlsSupport: true
+  storage:
+    pvcClaimSize: 5Gi
+    pvcStrategy: per-workspace
