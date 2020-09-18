@@ -3,6 +3,7 @@ kind: Config
 metadata:
   name: cluster
 spec:
+  defaultRoute: true
   logging: 2
   managementState: Managed
   replicas: 1
