@@ -4,3 +4,4 @@ bases:
   - cluster-config
   - nfs-provisioner
   - codeready-workspaces
+  - pipelines
