@@ -12,11 +12,11 @@ spec:
             - name: PROVISIONER_NAME
               value: fuseim.pri/ifs
             - name: NFS_SERVER
-              value: 192.168.0.100
+              value: 192.168.1.100
             - name: NFS_PATH
               value: /tank/openshift/storage
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 192.168.0.100
+            server: 192.168.1.100
             path: /tank/openshift/storage
