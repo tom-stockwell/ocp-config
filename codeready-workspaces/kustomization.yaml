@@ -1,0 +1,6 @@
+namespace: openshift-workspaces
+resources:
+  - manifests/namespace.yml
+  - manifests/operator-group.yml
+  - manifests/subscription.yml
+  - manifests/che-cluster.yml
