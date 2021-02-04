@@ -6,3 +6,4 @@ bases:
   - cluster-config
   - nfs-provisioner
   - openshift-pipelines
+  - tenants
