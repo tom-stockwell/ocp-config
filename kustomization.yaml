@@ -5,4 +5,4 @@ bases:
   - sealed-secrets
   - cluster-config
   - nfs-provisioner
-  - pipelines
+  - openshift-pipelines
