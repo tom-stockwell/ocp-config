@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - manifests/auth/config.yml
-  - manifests/auth/htpasswd-secret.yml
-  - manifests/auth/cluster-admins.yml
-  - manifests/image-registry/config.yml
-  - manifests/image-registry/persistent-volume.yml
