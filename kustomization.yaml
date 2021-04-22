@@ -3,7 +3,8 @@ kind: Kustomization
 resources:
   #- flux-system
   - sealed-secrets
-  - cluster-config
+  - auth
+  - image-registry
   - nfs-provisioner
   - openshift-pipelines
-  - tenants
+  # - tenants
