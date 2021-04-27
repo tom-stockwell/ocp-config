@@ -1,40 +1,29 @@
-allowHostDirVolumePlugin: true
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: false
-allowedCapabilities: null
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities: null
-fsGroup:
-  type: RunAsAny
-groups: []
-kind: SecurityContextConstraints
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: nfs-anyuid
-  annotations:
-    kubernetes.io/description: |-
-      copy of hostmount-anyuid
-priority: null
-readOnlyRootFilesystem: false
-requiredDropCapabilities:
-- MKNOD
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: MustRunAs
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccount:nfs-provisioner:nfs-client-provisioner
-volumes:
-- configMap
-- downwardAPI
-- emptyDir
-- hostPath
-- nfs
-- persistentVolumeClaim
-- projected
-- secret
+  name: use-scc-hostmount-anyuid
+  namespace: default
+rules:
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - hostmount-anyuid
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: use-scc-hostmount-anyuid
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: nfs-client-provisioner
+  namespace: default
+roleRef:
+  kind: Role
+  name: use-scc-hostmount-anyuid
+  apiGroup: rbac.authorization.k8s.io
