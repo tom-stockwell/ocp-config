@@ -3,3 +3,8 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+patches:
+- path: patches/security-context.yml
+  target:
+    kind: Deployment
+    name: (kustomize|source)-controller
