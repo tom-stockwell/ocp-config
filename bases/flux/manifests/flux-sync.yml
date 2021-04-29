@@ -1,0 +1,39 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: cluster-config
+  namespace: default
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/stocky37/ocp-config.git
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: flux-system
+  namespace: default
+spec:
+  interval: 1h
+  path: clusters/cluster/flux
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: cluster-config
+  validation: client
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: cluster-config
+  namespace: default
+spec:
+  interval: 10m0s
+  path: clusters/cluster/core
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: cluster-config
+  validation: client
