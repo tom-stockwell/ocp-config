@@ -1,29 +1,28 @@
----
-kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
 metadata:
   name: use-scc-hostmount-anyuid
   namespace: default
 rules:
-- apiGroups:
+- resources:
+  - securitycontextconstraints
+  apiGroups:
   - security.openshift.io
   resourceNames:
   - hostmount-anyuid
-  resources:
-  - securitycontextconstraints
   verbs:
   - use
 ---
-kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
 metadata:
   name: use-scc-hostmount-anyuid
   namespace: default
-subjects:
-- kind: ServiceAccount
-  name: nfs-client-provisioner
-  namespace: default
 roleRef:
-  kind: Role
   name: use-scc-hostmount-anyuid
+  kind: Role
   apiGroup: rbac.authorization.k8s.io
+subjects:
+- name: nfs-client-provisioner
+  namespace: default
+  kind: ServiceAccount

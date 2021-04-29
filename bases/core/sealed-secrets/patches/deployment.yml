@@ -8,8 +8,8 @@ spec:
     spec:
       containers:
       - name: sealed-secrets-controller
-        securityContext: null
         env:
         - name: SEALED_SECRETS_UPDATE_STATUS
           value: "1"
+        securityContext: null
       securityContext: null

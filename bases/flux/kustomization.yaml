@@ -1,11 +1,13 @@
+namespace: flux-system
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: flux-system
 resources:
 - github.com/fluxcd/flux2/manifests/install?ref=v0.13.1
 - manifests/flux-sync.yml
 patches:
-- path: patches/remove-fsgroup.yml
+- patch: |-
+    - op: remove
+      path: /spec/template/spec/securityContext/fsGroup
   target:
-    kind: Deployment
     name: (kustomize|source|image-reflector|image-automation)-controller
+    kind: Deployment
