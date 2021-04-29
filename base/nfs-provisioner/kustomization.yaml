@@ -7,6 +7,5 @@ resources:
   - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner-4.0.9/deploy/deployment.yaml
   - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner-4.0.9/deploy/rbac.yaml
   - manifests/scc.yml
-patchesStrategicMerge:
-  - patches/deployment.yml
-  - patches/storageclass.yml
+patches:
+  - path: patches/storageclass.yml

@@ -10,7 +10,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/stocky37/homelab-ocp-config
+  url: ssh://git@github.com/stocky37/ocp-config.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
@@ -19,7 +19,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./
+  path: clusters/homelab
   prune: true
   sourceRef:
     kind: GitRepository
