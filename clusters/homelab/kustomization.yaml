@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../base
-  - flux-system/gotk-sync.yaml
-  - auth/secret-htpasswd.yml
-patches:
-  - path: nfs-provisioner/deployment.yml
