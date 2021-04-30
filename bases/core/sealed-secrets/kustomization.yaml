@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
 - namespace.yml
 - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.15.0/controller.yaml
-patchesStrategicMerge:
-- patch-deployment.yml
+patches:
+- path: patch-deployment.yml
