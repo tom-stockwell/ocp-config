@@ -4,4 +4,4 @@ metadata:
   name: cluster-config
   namespace: default
 spec:
-  path: clusters/homelab/core
+  path: clusters/homelab
