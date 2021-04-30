@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - ../../../bases/flux
 patches:
-- path: cluster-config.yml
-- path: flux-system.yml
+- path: patch-cluster-config.yml
+- path: patch-flux-system.yml

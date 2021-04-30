@@ -2,7 +2,7 @@ namespace: sealed-secrets
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- manifests/namespace.yml
+- namespace.yml
 - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.15.0/controller.yaml
 patchesStrategicMerge:
-- patches/deployment.yml
+- patch-deployment.yml
