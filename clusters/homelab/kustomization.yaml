@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../../bases/core
+- ../../overlays/flux
 - auth/secret-htpasswd.yml
 patches:
+- path: flux/patch-cluster-config.yml
 - path: nfs-provisioner/patch-deployment.yml

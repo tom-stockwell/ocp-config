@@ -12,25 +12,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
-  name: flux-system
-  namespace: default
-spec:
-  interval: 1h
-  path: clusters/cluster/flux
-  prune: true
-  sourceRef:
-    name: cluster-config
-    kind: GitRepository
-  validation: client
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-kind: Kustomization
-metadata:
   name: cluster-config
   namespace: default
 spec:
   interval: 10m0s
-  path: clusters/cluster/core
+  path: .
   prune: true
   sourceRef:
     name: cluster-config
