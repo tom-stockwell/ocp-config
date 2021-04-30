@@ -1,0 +1,51 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: engagement-sim-team-admin
+  namespace: engagement-sim-dev
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: engagement-sim-team
+  namespace: engagement-sim-dev
+- kind: Group
+  name: engagement-sim-team
+
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: engagement-sim-team-admin
+  namespace: engagement-sim-cicd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: engagement-sim-team
+  namespace: engagement-sim-cicd
+- kind: Group
+  name: engagement-sim-team
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: engagement-sim-team-admin
+  namespace: engagement-sim
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: engagement-sim-team
+  namespace: engagement-sim
+- kind: Group
+  name: engagement-sim-team

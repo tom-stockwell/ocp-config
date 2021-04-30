@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: engagement-sim-cicd
+  
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: engagement-sim-dev
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: engagement-sim
