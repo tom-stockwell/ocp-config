@@ -4,4 +4,4 @@ resources:
 - ../../../bases/core
 - auth/secret-htpasswd.yml
 patches:
-- path: nfs-provisioner/deployment.yml
+- path: nfs-provisioner/patch-deployment.yml
