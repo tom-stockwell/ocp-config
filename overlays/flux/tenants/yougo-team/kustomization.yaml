@@ -1,7 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-- ../../../../tenants/yougo-team
-- rbac.yml
-commonLabels:
-  toolkit.fluxcd.io/tenant: yougo-team

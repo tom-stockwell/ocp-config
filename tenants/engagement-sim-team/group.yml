@@ -1,7 +1,0 @@
-apiVersion: user.openshift.io/v1
-kind: Group
-metadata:
-  name: engagement-sim-team
-users:
-- stocky
-- dev-user
