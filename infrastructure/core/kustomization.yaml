@@ -6,4 +6,4 @@ resources:
 - nfs-provisioner
 - openshift-pipelines
 - sealed-secrets
-- monitoring
+# - monitoring
