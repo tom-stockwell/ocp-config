@@ -8,4 +8,10 @@ resources:
 - auth/secret-htpasswd.yml
 
 patches:
+- path: auth/patch-config.yml
+  target:
+    kind: OAuth
+    name: cluster
+
 - path: nfs-provisioner/patch-deployment.yml
+
