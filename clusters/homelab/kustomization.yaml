@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - ../../infrastructure/core
 - ../../infrastructure/openshift-gitops
-# - ../../infrastructure/projects
+- ../../infrastructure/projects
 # - ../../infrastructure/user-workload-monitoring
 - auth/secret-htpasswd.yml
 

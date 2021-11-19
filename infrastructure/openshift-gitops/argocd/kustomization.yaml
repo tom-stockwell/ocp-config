@@ -4,7 +4,6 @@ resources:
 - argocd.yml
 - namespace.yml
 - rbac.yml
-# - secrets-repositories.yml
 namespace: openshift-gitops
 
 
