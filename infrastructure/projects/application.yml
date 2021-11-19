@@ -8,9 +8,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    path: projects
     repoURL: https://github.com/stocky37/ocp-projects.git
     targetRevision: main
+    path: projects
   syncPolicy:
     automated:
       prune: true

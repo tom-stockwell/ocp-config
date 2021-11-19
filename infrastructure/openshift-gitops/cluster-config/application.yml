@@ -3,15 +3,13 @@ kind: Application
 metadata:
   name: cluster-config
 spec:
+  project: default
   destination:
-    name: ''
-    namespace: ''
     server: 'https://kubernetes.default.svc'
   source:
-    path: clusters/homelab
     repoURL: 'https://github.com/stocky37/ocp-config.git'
     targetRevision: argocd
-  project: default
+    path: clusters/homelab
   syncPolicy:
     automated:
       prune: true
