@@ -8,8 +8,8 @@ spec:
     spec:
       containers:
       - name: sealed-secrets-controller
-        env:
-        - name: SEALED_SECRETS_UPDATE_STATUS
-          value: "1"
+        # disabling automatic key renewal - unsafe for production use
+        args:
+        - --key-renew-period=0
         securityContext: null
       securityContext: null
