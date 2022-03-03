@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-projects
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/stocky37/ocp-projects.git
+    targetRevision: main
+    path: projects
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,4 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-components:
-- ../components/sealed-secrets
+resources:
+- ../../base
+patches:
+- patch-cluster-config-app.yml
