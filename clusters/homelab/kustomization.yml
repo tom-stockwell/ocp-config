@@ -14,5 +14,5 @@ resources:
 # - ../../infrastructure/acm
 # - ../../infrastructure/user-workload-monitoring
 
-# patches:
-# - path: nfs-provisioner/patch-deployment.yml
+patches:
+- path: nfs-provisioner/patch-deployment.yml
