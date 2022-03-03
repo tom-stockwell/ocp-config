@@ -8,5 +8,5 @@ spec:
     type: HTPasswd
     htpasswd:
       fileData:
-        name: htpasswd
+        name: htpasswd-882hd4mdf9
     mappingMethod: claim

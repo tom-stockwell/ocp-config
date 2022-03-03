@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+# core
+- ../../bootstrap/overlays/homelab
+- ../../infrastructure/auth-htpasswd
+- ../../infrastructure/image-registry
+- ../../infrastructure/nfs-provisioner
+
+# working with apps
+# - ../../infrastructure/openshift-pipelines
+
+# optional / testing
+# - ../../infrastructure/acm
+# - ../../infrastructure/user-workload-monitoring
+
+# patches:
+# - path: nfs-provisioner/patch-deployment.yml

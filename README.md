@@ -35,3 +35,13 @@
     ```bash
     kustomize build clusters/$cluster/flux | oc apply -f -
     ```
+   
+
+
+
+##
+```
+oc apply -k bootstrap
+oc apply -k ../ocp-secrets/bootstrap
+oc -n sealed-secrets delete pod -l name=sealed-secrets-controller
+```

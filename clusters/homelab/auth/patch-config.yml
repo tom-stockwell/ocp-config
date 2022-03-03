@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/identityProviders/0/htpasswd/fileData/name
-  value: htpasswd-882hd4mdf9
