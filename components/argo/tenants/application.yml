@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-projects
+  name: tenants
 spec:
   project: default
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/stocky37/ocp-projects.git
+    repoURL: https://github.com/stocky37/ocp-tenants.git
     targetRevision: main
-    path: projects
+    path: .
   syncPolicy:
     automated:
       prune: true
