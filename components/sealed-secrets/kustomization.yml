@@ -3,6 +3,11 @@ kind: Kustomization
 namespace: sealed-secrets
 resources:
 - namespace.yml
-- https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.3/controller.yaml
+# - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.3/controller.yaml
+# - https://github.com/redhat-cop/gitops-catalog//sealed-secrets-operator/overlays/default?ref=
+- ../../../../redhat/gitops-catalog/sealed-secrets-operator/overlays/default
 patches:
-- path: patch-deployment.yml
+- path: patch-disable-key-renewal.yml
+  target:
+    kind: Deployment
+    name: sealed-secrets-controller
