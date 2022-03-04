@@ -3,16 +3,16 @@ kind: Kustomization
 resources:
 # core
 - ../../bootstrap/overlays/homelab
-- ../../infrastructure/oauth
-- ../../infrastructure/image-registry
-- ../../infrastructure/nfs-provisioner
+- ../../components/oauth
+- ../../components/image-registry
+- ../../components/nfs-provisioner
 
 # working with apps
 - https://github.com/redhat-cop/gitops-catalog//openshift-pipelines-operator/overlays/preview?ref=a13bba3861f95583ef22678f00907ae220624a65
 
 # optional / testing
-# - ../../infrastructure/acm
-# - ../../infrastructure/user-workload-monitoring
+# - ../../components/acm
+# - ../../components/user-workload-monitoring
 
 patches:
 - path: nfs-provisioner/patch-deployment.yml
