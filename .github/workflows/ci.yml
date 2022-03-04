@@ -8,7 +8,7 @@ on:
 
 jobs:
   v4-homelab:
-    name: homelab/flux [Kustomize v4]
+    name: 'kustomize: clusters/homelab'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,20 +16,7 @@ jobs:
       - name: Run kustomize build
         uses: karancode/kustomize-github-action@master
         with:
-          kustomize_version: '4.1.2'
+          kustomize_version: '4.5.2'
           kustomize_build_dir: clusters/homelab
-          kustomize_build_options: --load-restrictor LoadRestrictionsNone
+          #kustomize_build_options: --load-restrictor LoadRestrictionsNone
 
-  v3-homelab:
-    name: homelab/flux [Kustomize v3]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Run kustomize build
-        uses: karancode/kustomize-github-action@master
-        with:
-          kustomize_version: '3.10.0'
-          kustomize_build_dir: clusters/homelab
-          kustomize_build_options: --load_restrictor LoadRestrictionsNone
-  
