@@ -8,7 +8,7 @@ resources:
 - ../../infrastructure/nfs-provisioner
 
 # working with apps
-# - ../../infrastructure/openshift-pipelines
+- ../../infrastructure/openshift-pipelines
 
 # optional / testing
 # - ../../infrastructure/acm
