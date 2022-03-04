@@ -6,7 +6,10 @@ resources:
 - ../../components/oauth
 - ../../components/image-registry
 - ../../components/nfs-provisioner
+
+# configuring tenants
 - ../../components/namespace-config
+- ../../components/argo/tenants
 
 # working with apps
 - ../../components/openshift-pipelines
