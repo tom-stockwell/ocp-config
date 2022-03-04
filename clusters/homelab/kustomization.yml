@@ -6,6 +6,7 @@ resources:
 - ../../components/oauth
 - ../../components/image-registry
 - ../../components/nfs-provisioner
+- ../../components/namespace-config
 
 # working with apps
 - ../../components/openshift-pipelines
