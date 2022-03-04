@@ -8,7 +8,7 @@ resources:
 - ../../components/nfs-provisioner
 
 # working with apps
-- https://github.com/redhat-cop/gitops-catalog//openshift-pipelines-operator/overlays/preview?ref=a13bba3861f95583ef22678f00907ae220624a65
+- ../../components/openshift-pipelines
 
 # optional / testing
 # - ../../components/acm
