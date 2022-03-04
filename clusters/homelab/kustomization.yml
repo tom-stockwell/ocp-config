@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 # core
 - ../../bootstrap/overlays/homelab
-- ../../infrastructure/auth-htpasswd
+- ../../infrastructure/oauth
 - ../../infrastructure/image-registry
 - ../../infrastructure/nfs-provisioner
 
