@@ -7,7 +7,7 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
   source:
-    repoURL: 'https://github.com/stocky37/ocp-config.git'
+    repoURL: 'https://github.com/tom-stockwell/ocp-config.git'
     targetRevision: main
   syncPolicy:
     automated:

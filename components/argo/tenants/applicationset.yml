@@ -5,7 +5,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: &url https://github.com/stocky37/ocp-tenants.git
+        repoURL: &url https://github.com/tom-stockwell/ocp-tenants.git
         revision: &rev HEAD
         directories:
           - path: 'tenants/*'
