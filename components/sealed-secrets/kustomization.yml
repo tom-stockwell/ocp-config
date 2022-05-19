@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: sealed-secrets
 resources:
 - namespace.yml
-- https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.3/controller.yaml
+- https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.5/controller.yaml
 patches:
 - path: patch-deployment.yml
