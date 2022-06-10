@@ -4,9 +4,6 @@ resources:
   - https://github.com/redhat-cop/gitops-catalog//namespace-configuration-operator/overlays/default?ref=a13bba3861f95583ef22678f00907ae220624a65
 
 patches:
-  - path: patch-operatorgroup.yml
-    target:
-      kind: OperatorGroup
   - path: patch-subscription.yml
     target:
       kind: Subscription
