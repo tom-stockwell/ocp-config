@@ -7,3 +7,12 @@ patches:
   - path: patch-operatorgroup.yml
     target:
       kind: OperatorGroup
+  - path: patch-subscription.yml
+    target:
+      kind: Subscription
+
+    # Changed to Automatic install plan approval, so these are no longer needed
+  - path: patch-delete-job.yml
+  - path: patch-delete-role.yml
+  - path: patch-delete-rolebinding.yml
+  - path: patch-delete-serviceaccount.yml
