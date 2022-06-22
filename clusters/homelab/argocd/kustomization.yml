@@ -5,7 +5,7 @@ commonLabels:
   cluster: homelab
 
 resources:
-  - ../../../infra/cluster-config
+  - ../../../components/cluster-config
 
 replacements:
   - source:
