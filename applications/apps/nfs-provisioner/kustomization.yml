@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-nameSuffix: nfs-provisioner
+nameSuffix: -nfs-provisioner
 
 commonAnnotations:
   argocd.argoproj.io/sync-wave: '-1'
@@ -17,4 +17,4 @@ patches:
     patch: |
       - op: replace
         path: /spec/source/path
-        value: clusters/cluster/components/nfs-provisioner
+        value: clusters/cluster/config/nfs-provisioner
