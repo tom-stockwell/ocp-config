@@ -1,28 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-commonLabels:
-  cluster: homelab
-
 resources:
-  - ../base
-  - ../../applications/apps/image-registry
-  - ../../applications/apps/nfs-provisioner
-  - ../../applications/apps/oauth
-  - ../../applications/apps/openshift-gitops
-  - ../../applications/apps/openshift-pipelines
-  - ../../applications/apps/sealed-secrets
-
-replacements:
-  - source:
-      kind: Secret
-      name: repository-ocp-config
-      fieldPath: metadata.labels.cluster
-    targets:
-      - select:
-          kind: Application
-        fieldPaths:
-          - spec.source.path
-        options:
-          delimiter: /
-          index: 1
+- infra/image-registry
+- infra/nfs-provisioner
+- infra/oauth
+- infra/openshift-gitops
+- infra/openshift-pipelines
+- infra/sealed-secrets
