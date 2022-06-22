@@ -1,7 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-- ../../components/sealed-secrets
-- ../../components/openshift-gitops
-- ../../components/argo/cluster-config
-# - ../../components/argo/tenants
