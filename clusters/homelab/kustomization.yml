@@ -1,22 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-# core
-- ../../bootstrap/clusters/homelab
-- ../../components/oauth
-- ../../components/image-registry
-- ../../components/nfs-provisioner
-
-# configuring tenants
-- ../../components/namespace-config
-- ../../components/argo/tenants
-
-# working with apps
-- ../../components/openshift-pipelines
-
-# optional / testing
-# - ../../components/acm
-# - ../../components/user-workload-monitoring
-
-patches:
-- path: nfs-provisioner/patch-deployment.yml
+- components/image-registry
+- components/nfs-provisioner
+- components/oauth
+- components/openshift-gitops
+- components/openshift-pipelines
+- components/sealed-secrets
