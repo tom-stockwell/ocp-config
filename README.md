@@ -4,8 +4,8 @@
 
 ## Configuring a new cluster
 ##
-```
-oc apply -k bootstrap
-oc apply -k ../ocp-secrets/bootstrap
-oc -n sealed-secrets delete pod -l name=sealed-secrets-controller
+```sh
+cluster=homelab
+
+oc apply -k clusters/$cluster/bootstrap
 ```
