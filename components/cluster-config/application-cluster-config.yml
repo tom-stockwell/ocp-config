@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/tom-stockwell/ocp-config.git
-    targetRevision: apps
+    targetRevision: HEAD
     path: clusters/cluster/argocd
   syncPolicy:
     automated:
