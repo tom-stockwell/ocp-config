@@ -1,22 +1,28 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
+commonLabels:
+  cluster: homelab
+
 resources:
-# core
-- ../../bootstrap/clusters/homelab
-- ../../components/oauth
-- ../../components/image-registry
-- ../../components/nfs-provisioner
+  - ../base
+  - ../../applications/apps/image-registry
+  - ../../applications/apps/nfs-provisioner
+  - ../../applications/apps/oauth
+  - ../../applications/apps/openshift-gitops
+  - ../../applications/apps/openshift-pipelines
+  - ../../applications/apps/sealed-secrets
 
-# configuring tenants
-- ../../components/namespace-config
-- ../../components/argo/tenants
-
-# working with apps
-- ../../components/openshift-pipelines
-
-# optional / testing
-# - ../../components/acm
-# - ../../components/user-workload-monitoring
-
-patches:
-- path: nfs-provisioner/patch-deployment.yml
+replacements:
+  - source:
+      kind: Secret
+      name: repository-ocp-config
+      fieldPath: metadata.labels.cluster
+    targets:
+      - select:
+          kind: Application
+        fieldPaths:
+          - spec.source.path
+        options:
+          delimiter: /
+          index: 1

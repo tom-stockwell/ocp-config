@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-
+  namespace: openshift-gitops
+spec:
+  project: default
+  destination:
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://github.com/tom-stockwell/ocp-config.git'
+    targetRevision: apps
+    path: clusters/cluster
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
