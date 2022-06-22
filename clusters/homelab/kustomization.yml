@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- infra/image-registry
-- infra/nfs-provisioner
-- infra/oauth
-- infra/openshift-gitops
-- infra/openshift-pipelines
-- infra/sealed-secrets
+- components/image-registry
+- components/nfs-provisioner
+- components/oauth
+- components/openshift-gitops
+- components/openshift-pipelines
+- components/sealed-secrets

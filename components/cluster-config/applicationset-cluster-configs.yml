@@ -8,7 +8,7 @@ spec:
         repoURL: &url https://github.com/tom-stockwell/ocp-config.git
         revision: &rev apps
         directories:
-          - path: clusters/cluster/infra/*
+          - path: clusters/cluster/components/*
   template:
     metadata:
       name: '{{ path.basename }}'
