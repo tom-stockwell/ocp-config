@@ -7,3 +7,4 @@ resources:
 - components/openshift-gitops
 - components/openshift-pipelines
 - components/sealed-secrets
+- components/tenants
