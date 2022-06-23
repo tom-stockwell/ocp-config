@@ -6,7 +6,8 @@
 ##
 ```sh
 cluster=homelab
-oc apply -k clusters/$cluster/bootstrap
+oc apply -k clusters/$cluster/bootstrap/prereqs
+oc apply -k clusters/$cluster/bootstrap/setup
 
 # install common certs, etc. for sealed-secrets
 $ocp_secrets_project/bin/bootstrap.sh
