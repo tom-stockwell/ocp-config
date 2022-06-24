@@ -4,5 +4,9 @@ namespace: sealed-secrets
 resources:
 - namespace.yml
 - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.5/controller.yaml
+- clusterrole-sealed-secrets-admin.yml
+- clusterrole-sealed-secrets-edit.yml
+- clusterrole-sealed-secrets-view.yml
+
 patches:
 - path: patch-deployment.yml
