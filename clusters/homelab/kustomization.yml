@@ -5,7 +5,7 @@ resources:
 - image-registry
 - nfs-provisioner
 - oauth
-- openshift-gitops
+- openshift-gitops-instance
+- openshift-gitops-operator
 - openshift-pipelines
 - sealed-secrets
-- tenants
