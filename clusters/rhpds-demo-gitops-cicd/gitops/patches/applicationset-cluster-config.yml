@@ -1,11 +1,3 @@
-apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
-metadata:
-  name: cluster-config
-spec:
-  generators:
-    - git:
-        directories:
-          - path: clusters/rhpds-demo-gitops-cicd/*
-          - path: clusters/rhpds-demo-gitops-cicd/bootstrap
-            exclude: true
+- op: replace
+  path: /spec/generators/0/git/directories/1/path
+  value: clusters/rhpds-demo-gitops-cicd/bootstrap

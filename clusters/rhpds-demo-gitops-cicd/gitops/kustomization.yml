@@ -5,5 +5,11 @@ resources:
   - ../../../components/gitops
 
 patches:
+  - path: patches/applicationset-common.yml
+    target:
+      kind: ApplicationSet
+
   - path: patches/applicationset-cluster-config.yml
-  - path: patches/applicationset-tenants.yml
+    target:
+      kind: ApplicationSet
+      name: cluster-config
