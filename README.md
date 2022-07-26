@@ -10,7 +10,7 @@ This repository configures different OpenShift clusters that I use regularly.
     * &lt;cluster&gt;
         * bootstrap 
         * &lt;various-components&gt;
-* [components](#components)
+* [infra](#infrastructure)
 
 This repository uses [Kustomize](https://kustomize.io/) to configure all the necessary Kubernetes resources.
 However, I use the `.yml` extensions for Kustomization files rather than the standard `.yaml` extension as a personal preference.
@@ -24,7 +24,7 @@ This Kustomization should use the equivalent `component` directory as a base bef
 
 The base cluster subdirectory contains a Kustomization file which includes all the individual components in order to allow the configuration of the cluster as a whole to be tested in CI.
 
-The [components](#components) directory contains any personal or shared configuration for individual pieces of configuration or application.
+The [infra](#infrastructure) directory contains various pieces of configuration.
 These are typically sourced from external, shared repositories and could be omitted here and sourced remotely in the cluster configurations.
 However, I have still included them here in case there are any personal modifications I would like to make that could be shared amongst all my clusters.
 
@@ -67,18 +67,18 @@ However, I have still included them here in case there are any personal modifica
 | **[homelab](./clusters/homelab)**                               | Configuration for my homelab cluster                                                      |
 | **[rhpds-demo-gitops-cicd](./clusters/rhpds-demo-gitops-cicd)** | Configuration for setting up the GitOps & CI/CD demo on an RHPDS Open Environment cluster | 
 
-## Components
+## Infrastructure
 
 | Component                                                               | Description                                                                                                                                                                                                  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **[acm](./components/acm)**                                             | Installs & configures [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (**Note:** out of date)                                           |
-| **[gitops](./components/gitops)**                                       | Configures the ArgoCD Applications for cluster configuration                                                                                                                                                 |
-| **[image-registry](./components/image-registry)**                       | Configures the [Image Registry Operator](https://docs.openshift.com/container-platform/4.10/registry/configuring-registry-operator.html)                                                                     |
-| **[namespace-config](./components/namespace-config)**                   | Installs the [Namespace Configuration Operator](https://github.com/redhat-cop/namespace-configuration-operator)                                                                                              |
-| **[nfs-provisioner](./components/nfs-provisioner)**                     | Installs the [NFS Subdir External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner)                                                                                           |
-| **[oauth](./components/oauth)**                                         | Configures [OpenShift OAuth identity providers](https://docs.openshift.com/container-platform/4.10/authentication/understanding-identity-provider.html)                                                      |
-| **[openshift-gitops-instance](./components/openshift-gitops-instance)** | Configures the cluster-wide ArgoCD instance                                                                                                                                                                  |
-| **[openshift-gitops-operator](./components/openshift-gitops-operator)** | Installs [OpenShift GitOps](https://docs.openshift.com/container-platform/4.10/cicd/gitops/understanding-openshift-gitops.html)                                                                              |
-| **[openshift-pipelines](./components/openshift-pipelines)**             | Installs [OpenShift Pipelines](https://docs.openshift.com/container-platform/4.10/cicd/pipelines/understanding-openshift-pipelines.html)                                                                     |
-| **[sealed-secrets](./components/sealed-secrets)**                       | Installs [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)                                                                                                                                    |                                                                                                                                                                   
-| **[user-workload-monitoring](./components/user-workload-monitoring)**   | Enables [User Workload Monitoring](https://docs.openshift.com/container-platform/4.10/monitoring/enabling-monitoring-for-user-defined-projects.html) in the cluster monitoring stack (**Note:** out of date) |
+| **[acm](infra/acm)**                                             | Installs & configures [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (**Note:** out of date)                                           |
+| **[gitops](infra/gitops)**                                       | Configures the ArgoCD Applications for cluster configuration                                                                                                                                                 |
+| **[image-registry](infra/image-registry)**                       | Configures the [Image Registry Operator](https://docs.openshift.com/container-platform/4.10/registry/configuring-registry-operator.html)                                                                     |
+| **[namespace-config](infra/namespace-config)**                   | Installs the [Namespace Configuration Operator](https://github.com/redhat-cop/namespace-configuration-operator)                                                                                              |
+| **[nfs-provisioner](infra/nfs-provisioner)**                     | Installs the [NFS Subdir External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner)                                                                                           |
+| **[oauth](infra/oauth)**                                         | Configures [OpenShift OAuth identity providers](https://docs.openshift.com/container-platform/4.10/authentication/understanding-identity-provider.html)                                                      |
+| **[openshift-gitops-instance](infra/openshift-gitops-instance)** | Configures the cluster-wide ArgoCD instance                                                                                                                                                                  |
+| **[openshift-gitops-operator](infra/openshift-gitops-operator)** | Installs [OpenShift GitOps](https://docs.openshift.com/container-platform/4.10/cicd/gitops/understanding-openshift-gitops.html)                                                                              |
+| **[openshift-pipelines](infra/openshift-pipelines)**             | Installs [OpenShift Pipelines](https://docs.openshift.com/container-platform/4.10/cicd/pipelines/understanding-openshift-pipelines.html)                                                                     |
+| **[sealed-secrets](infra/sealed-secrets)**                       | Installs [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)                                                                                                                                    |                                                                                                                                                                   
+| **[user-workload-monitoring](infra/user-workload-monitoring)**   | Enables [User Workload Monitoring](https://docs.openshift.com/container-platform/4.10/monitoring/enabling-monitoring-for-user-defined-projects.html) in the cluster monitoring stack (**Note:** out of date) |
