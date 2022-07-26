@@ -5,17 +5,27 @@ commonLabels:
   cluster: homelab
 
 resources:
-  - ../../../../components/tenants
+  - ../../../components/gitops
 
 replacements:
   - source:
-      kind: ApplicationSet
+      kind: Secret
+      name: repository-ocp-config
       fieldPath: metadata.labels.cluster
     targets:
+      - select:
+          kind: Application
+        fieldPaths:
+          - spec.source.path
+        options:
+          delimiter: /
+          index: 1
+
       - select:
           kind: ApplicationSet
         fieldPaths:
           - spec.generators.0.git.directories.0.path
+          - spec.generators.0.git.directories.1.path
         options:
           delimiter: /
           index: 1

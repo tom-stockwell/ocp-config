@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  v4-homelab:
+  homelab:
     name: 'kustomize: clusters/homelab'
     runs-on: ubuntu-latest
     steps:
@@ -18,5 +18,3 @@ jobs:
         with:
           kustomize_version: '4.5.2'
           kustomize_build_dir: clusters/homelab
-          #kustomize_build_options: --load-restrictor LoadRestrictionsNone
-

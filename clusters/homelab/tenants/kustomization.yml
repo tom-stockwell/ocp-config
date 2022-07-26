@@ -5,22 +5,13 @@ commonLabels:
   cluster: homelab
 
 resources:
-  - ../../../components/cluster-config
+  - ../../../components/tenants
 
 replacements:
   - source:
-      kind: Secret
-      name: repository-ocp-config
+      kind: ApplicationSet
       fieldPath: metadata.labels.cluster
     targets:
-      - select:
-          kind: Application
-        fieldPaths:
-          - spec.source.path
-        options:
-          delimiter: /
-          index: 1
-
       - select:
           kind: ApplicationSet
         fieldPaths:

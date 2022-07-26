@@ -1,14 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-configs
+  name: cluster-config
 spec:
   generators:
     - git:
         repoURL: &url https://github.com/tom-stockwell/ocp-config.git
         revision: &rev HEAD
         directories:
-          - path: clusters/cluster/components/*
+          - path: clusters/cluster/*
+          - path: clusters/cluster/bootstrap
+            exclude: true
   template:
     metadata:
       name: '{{ path.basename }}'
