@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: tenants
+spec:
+  generators:
+    - git:
+        directories:
+          - path: clusters/rhpds-demo-gitops-cicd/*
